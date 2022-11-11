@@ -1,19 +1,16 @@
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-import {HttpClientModule} from '@angular/common/http'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ListTripsComponent } from './list-trips/list-trips.component';
-import { NgModule } from '@angular/core';
-import { CreateTripComponent } from './create-trip/create-trip.component';
-import { UpdateTripComponent } from './update-trip/update-trip.component';
-
+import { ListStationsComponent } from './list-stations/list-stations.component';
+import{HttpClientModule}from '@angular/common/http';
+import { CreateStationComponent } from './create-station/create-station.component';
 @NgModule({
   declarations: [
     AppComponent,
-    ListTripsComponent,
-    CreateTripComponent,
-    UpdateTripComponent
+    ListStationsComponent,
+    CreateStationComponent,
   ],
   imports: [
     BrowserModule,
