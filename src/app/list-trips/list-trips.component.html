@@ -1,4 +1,4 @@
-<h2> List of trips</h2>
+
 <table class="table table-striped">
     <thead>
         <tr>
@@ -7,7 +7,7 @@
             <th>End time</th>
             <th>From station</th> 
             <th>To station</th>
-            <th>Actions to choose</th>
+            <th>Update/Delete</th>
         </tr>
     </thead>
     <tbody>
@@ -18,7 +18,8 @@
             <td>{{trip.fromStation}}</td>
             <td>{{trip.toStation}}</td>
             <td>
-                <button (click)="updateTrip(trip.idTrip)">Update </button>
+                <button class="btn btn-default"  (click)="updateTrip(trip.idTrip)">Update </button>
+                <button class="btn btn-custom"  (click)="deleteTrip(trip.idTrip)">Delete </button>
             </td>
 
         </tr>

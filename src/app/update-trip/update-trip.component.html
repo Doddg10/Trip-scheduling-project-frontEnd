@@ -1,6 +1,7 @@
 <div class="col-md-6 offset-md-3">
     <h3>Update Trip</h3>
-    <form >
+    <form (ngSubmit)="onSubmit()">
+
         <div class="form-group">
             <label>Start time </label>
             <input type="text" class="form-control" id="startTime"
@@ -24,6 +25,7 @@
             <input type="text" class="form-control" id="toStation"
             [(ngModel)]="trip.toStation" name="toStation">
         </div>
-    <button class="btn btn-success" type="submit">Create</button>
+    <button class="btn btn-default" type="submit">Update</button>
+    <button class="btn btn-default" (click)="backToTripList()">Go back to list</button>
     </form>
     </div>

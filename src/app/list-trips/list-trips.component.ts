@@ -28,4 +28,10 @@ export class ListTripsComponent implements OnInit {
   updateTrip(id:number){
 this.route.navigate(['update-trip',id]);
   }
+  deleteTrip(id:number){
+    this.tripService.deleteTrip(id).subscribe(data=>{
+      console.log(data);
+      
+    })
+}
 }
