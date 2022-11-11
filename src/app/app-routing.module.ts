@@ -1,14 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CreateTripComponent } from './create-trip/create-trip.component';
-import { ListTripsComponent } from './list-trips/list-trips.component';
-import { UpdateTripComponent } from './update-trip/update-trip.component';
+import { CreateStationComponent } from './create-station/create-station.component';
+import { ListStationsComponent } from './list-stations/list-stations.component';
 
 const routes: Routes = [
-  {path: 'trips',component: ListTripsComponent},
-  {path:'create-trip',component:CreateTripComponent},
-  {path:'',redirectTo:'trips',pathMatch:'full'},
-  {path:'update-trip/:id',component:UpdateTripComponent},
+  {path: 'stations',component: ListStationsComponent},
+  {path:'create-station',component:CreateStationComponent},
+  {path:'',redirectTo:'stations',pathMatch:'full'},
 ];
 
 @NgModule({
