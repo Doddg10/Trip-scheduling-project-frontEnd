@@ -1,6 +1,6 @@
 export class Admin {
-    email!: string;
-    password!: string;
+    email: string;
+    password: string;
     constructor()
     {
         

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Admin } from '../admin';
-import { AdminService } from '../AdminService.service';
+import { AdminService } from '../admin.service';
 
 @Component({
   selector: 'app-admin-sign-up',
@@ -27,18 +27,7 @@ export class AdminSignUpComponent implements OnInit {
       
       
     )
-    /*console.log(this.admin);
-    this._Service.signupAdminFromRemote(this.admin).subscribe
-    (data=>
-      {alert("Registration Successfully");
-      this.msg='Resgistration successful';
-    });
-    this._Service.loginAdminFromRemote(this.admin).subscribe
-    (error=>
-      {alert("Registration failed");
-      this.msg-error.error;
-    
-  });*/
+   
     
  
   }

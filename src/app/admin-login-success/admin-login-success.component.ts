@@ -14,12 +14,12 @@ export class AdminLoginSuccessComponent implements OnInit {
   ngOnInit(): void {
   }
   gotoTrip(){
-    this.router.navigate(['/adminlogin'])
+    this.router.navigate(['/trips'])
 
   }
   gotoStation()
   {
-    this.router.navigate(['/adminlogin'])
+    this.router.navigate(['/stations'])
   }
 
 }

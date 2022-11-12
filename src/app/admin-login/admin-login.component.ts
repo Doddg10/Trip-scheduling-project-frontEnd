@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Admin } from '../admin';
 import { NgForm } from '@angular/forms';
-import { AdminService } from '../AdminService.service';
+import { AdminService } from '../admin.service';
 import { Route, Router } from '@angular/router';
 
 @Component({
