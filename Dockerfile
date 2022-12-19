@@ -1,13 +1,28 @@
-FROM node:latest as build
-WORKDIR /usr/local/app
-COPY ./ /usr/local/app/
+
+FROM node:18.12.1-alpine AS build
+
+WORKDIR /app
+
+#Copying all files from host to the container
+COPY package.json package-lock.json ./
+COPY . .
+
+#To install node modules
 RUN npm install
-RUN npm run build
+RUN npm install -g @angular/cli
+
+#To build the angular project based of node
+RUN ng build --configuration production --output-path=/dist
+
+#Deploying project on ng server
+#Base image from nginx
+FROM nginxinc/nginx-unprivileged
+
+#Copy the output of the project run into the nginx container to deploy it
+COPY --from=build /dist /usr/share/nginx/html
+
+#To take the nginx configuration file
+COPY ./nginx/nginx.conf /etc/nginx/conf.d/default.conf
 
 
-RUN npm install -g @angular/cli@latest
-RUN npm install -g envsub
-# start app
-EXPOSE 4200
-CMD ng serve --host 0.0.0.0
-#ENTRYPOINT ["/bin/sh",  "-c",  "envsub /usr/local/app/dist/trip-scheduling-frontend/assets/env.template.js /usr/local/app/dist/trip-scheduling-frontend/assets/env.js"]
+
