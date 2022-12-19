@@ -3,25 +3,25 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Trip } from './trip';
-import { environment } from 'src/environments/environment';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class TripService {
 
-private getURL='http://localhost:'+environment.apiUrl+'/api/tripScheduling/tripR';
-private updateURL='http://localhost:'+environment.apiUrl+'/api/tripScheduling/tripU';
-private deleteURL='http://localhost:'+environment.apiUrl+'/api/tripScheduling/tripD';
+private getURL='http://backend-tripscheduling-trip-schedulingg.apps.eu410.prod.nextcle.com/api/tripScheduling/tripR';
+private updateURL='http://backend-tripscheduling-trip-schedulingg.apps.eu410.prod.nextcle.com/api/tripScheduling/tripU';
+private deleteURL='http://backend-tripscheduling-trip-schedulingg.apps.eu410.prod.nextcle.com//api/tripScheduling/tripD';
 
   constructor(private http: HttpClient) { }
 
   listAllTrips(): Observable<object>{
-    return this.http.get('http://localhost:'+environment.apiUrl+'/api/tripScheduling/tripR');
+    return this.http.get('http://backend-tripscheduling-trip-schedulingg.apps.eu410.prod.nextcle.com/api/tripScheduling/tripR');
   }
 
   makeTrip(trip:Trip):Observable<Object>{
-    return this.http.post('http://localhost:'+environment.apiUrl+'/api/tripScheduling/tripC',trip);
+    return this.http.post('http://backend-tripscheduling-trip-schedulingg.apps.eu410.prod.nextcle.com/api/tripScheduling/tripC',trip);
   }
 
   getTripbyId(id:number):Observable<Trip>{
